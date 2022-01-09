@@ -1,12 +1,10 @@
 var express = require("express");
-var app = express()
-.use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-.listen(PORT, () => console.log(`Listening on ${PORT}`)); // express app which is used boilerplate for HTTP
+var app = express(); // express app which is used boilerplate for HTTP
 var http = require("http").Server(app);
 const mongo = require("mongodb").MongoClient;
 var moment = require("moment");
 
-const PORT = process.env.PORT || 3000; // take port from heroku or for loacalhost
+var PORT = process.env.PORT; // take port from heroku or for loacalhost
 
 var clientInfo = {};
 
