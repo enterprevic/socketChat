@@ -13,10 +13,14 @@ then ```node server.js``` to start up the server
 
 
 -change and join another room
+
+
 -dynamic background 
 
 
 -settings toggle
+
+
 -video call
 
 
