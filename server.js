@@ -1,15 +1,21 @@
-var express = require("express");
-var app = express(); // express app which is used boilerplate for HTTP
-var http = require("http").Server(app);
+// var express = require("express");
+// var app = express(); // express app which is used boilerplate for HTTP
+// var http = require("http").Server(app);
 const mongo = require("mongodb").MongoClient;
 var moment = require("moment");
 
-var PORT = process.env.PORT; // take port from heroku or for loacalhost
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+
+
+var PORT = process.env.PORT || 3000; // take port from heroku or for loacalhost
 
 var clientInfo = {};
 
 //socket io module
-var io = require("socket.io")(http);
+//var io = require("socket.io")(http);
 
 // expose the folder via express thought
 app.use(express.static(__dirname + "/public"));
@@ -137,6 +143,6 @@ mongo.connect(uri, function (err, db) {
   });
 });
 
-http.listen(PORT, function () {
+server.listen(PORT, function () {
   console.log("server started");
 });
