@@ -1,6 +1,3 @@
-// var express = require("express");
-// var app = express(); // express app which is used boilerplate for HTTP
-// var http = require("http").Server(app);
 const mongo = require("mongodb").MongoClient;
 var moment = require("moment");
 
@@ -47,20 +44,6 @@ function sendCurrentUsers(socket) {
 }
   io.on("connection", function (socket) {
     console.log("User is connected");
-
-    //get chats from collection
-    // chat
-    //   .find()
-    //   .limit(100)
-    //   .sort({ _id: 1 })
-    //   .toArray(function (err, res) {
-    //     if (err) {
-    //       throw err;
-    //     }
-
-    //     //emit messages
-    //     socket.emit("output", res);
-    //   });
 
     //for disconnection
     socket.on("disconnect", function () {
@@ -128,7 +111,6 @@ function sendCurrentUsers(socket) {
       }
     });
   });
-
 
 server.listen(PORT, function () {
   console.log("server started");

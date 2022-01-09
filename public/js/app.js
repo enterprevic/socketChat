@@ -1,6 +1,4 @@
 var socket = io();
-// listen for server connection
-// get query params from url
 var name = getQueryVariable("name") || "Anonymous";
 var room = getQueryVariable("room") || "No Room Selected";
 
@@ -21,8 +19,6 @@ var timeout;
 
 function timeoutFunction() {
   typing = false;
-  //console.log("stopped typing");
-  // socket.emit("typing", false);
   socket.emit("typing", {
     text: "", //name + " stopped typing"
   });
@@ -33,31 +29,12 @@ $("#messagebox").keyup(function () {
   console.log("happening");
   typing = true;
   $("#icon-type").removeClass();
-  //console.log("typing typing ....");
-  //socket.emit('typing', 'typing...');
   socket.emit("typing", {
     text: name + " is typing ...",
   });
   clearTimeout(timeout);
   timeout = setTimeout(timeoutFunction, 1000);
 });
-
-// below is the checking for page visibility api
-var hidden, visibilityChange;
-if (typeof document.hidden !== "undefined") {
-  // Opera 12.10 and Firefox 18 and later support
-  hidden = "hidden";
-  visibilityChange = "visibilitychange";
-} else if (typeof document.mozHidden !== "undefined") {
-  hidden = "mozHidden";
-  visibilityChange = "mozvisibilitychange";
-} else if (typeof document.msHidden !== "undefined") {
-  hidden = "msHidden";
-  visibilityChange = "msvisibilitychange";
-} else if (typeof document.webkitHidden !== "undefined") {
-  hidden = "webkitHidden";
-  visibilityChange = "webkitvisibilitychange";
-}
 
 //listening for typing  event
 socket.on("typing", function (message) {

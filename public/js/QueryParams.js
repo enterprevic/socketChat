@@ -33,7 +33,6 @@ function getQueryVariable(variable) {
 
 range.addEventListener("input", function () {
   form.style.fontSize = range.value + "px";
-  //console.log(range.value, range.value * 2);
 });
 
 settings.addEventListener("click", hideSettings);
