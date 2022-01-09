@@ -5,8 +5,6 @@ var room = getQueryVariable("room") || "No Room Selected";
 $(".room-title").text(room);
 // fires when client successfully conencts to the server
 socket.on("connect", function () {
-  console.log("Connected to Socket I/O Server!");
-  console.log(name + " wants to join  " + room);
   // to join a specific room
   socket.emit("joinRoom", {
     name: name,
@@ -26,7 +24,6 @@ function timeoutFunction() {
 // if key is pressed typing message is seen else auto after 2 sec typing false message is send
 // TODO : add broadcast event when server receives typing event
 $("#messagebox").keyup(function () {
-  console.log("happening");
   typing = true;
   $("#icon-type").removeClass();
   socket.emit("typing", {
@@ -79,8 +76,6 @@ socket.on("userSeen", function (msg) {
 
 //setup for custom events
 socket.on("message", function (message) {
-  console.log("New Message !");
-  console.log(message.text);
   // insert messages in container
   var $messages = $(".messages");
   var $message = $('<li class = "list-group-item"></li>');
