@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Chat</title>
+    
+    <link
+      href="https://img.icons8.com/doodle/48/000000/chat.png"
+      rel="icon"
+      type="image/png"
+    />
+    <link
+      href="https://img.icons8.com/doodle/48/000000/chat.png"
+      rel="shortcut icon"
+    />
+    <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
+    <link
+      href="https://img.icons8.com/doodle/48/000000/chat.png"
+      rel="apple-touch-icon-precomposed"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link href="/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="vertical-center">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 well" id="formID">
+            <h1 class="text-center">Join FreeChat Room!</h1>
+            <form action="/chat.html" class="">
+              <div class="form-group">
+                <label for="name"> Display Name :</label>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                  </span>
+                  <input
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Input your nickname"
+                    type="text"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="room">Enter Room :</label>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-comment"></i>
+                  </span>
+                  <input
+                    class="form-control"
+                    id="room"
+                    name="room"
+                    placeholder="Enter the room name"
+                    type="text"
+                    required
+                  />
+                </div>
+              </div>
+              <p align="center">Remember what happens in Vegas!</p>
+
+              <div class="form-group">
+                <input
+                  class="btn btn-info btn-block"
+                  type="submit"
+                  value="Join Chat"
+                />
+              </div>
+              <footer align="center">Made with JS 🍔</footer>
+            </form>
+            <div class="mode-layer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas class="background"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+    <script>
+      window.onload = function () {
+        Particles.init({
+          selector: ".background",
+        });
+      };
+    </script>
+  </body>
+</html>

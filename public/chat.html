@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>App</title>
+    <link
+      href="https://img.icons8.com/doodle/48/000000/chat.png"
+      rel="icon"
+      type="image/png"
+    />
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link href="/css/style.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .well {
+        margin-top: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid" id="formDataPage">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 well" id="formID">
+          <!-- <a href="/index.html">Change Settings</a> -->
+          <a class="btn btn-info" href="/index.html">
+            <i class="fa fa-sign-out"></i>
+            Log Out</a
+          >
+
+          <a class="btn btn-info" id="settings">
+            <i class="fa fa-cog"></i>
+            Settings</a
+          >
+
+          <a class="btn btn-info" href="/video.html" target="_blank">
+            <i class="fa fa-cog"></i>
+            Video call</a
+          >
+
+          <a class="btn btn-info" id="changeRooms">
+            <i class="fa fa-comments-o"></i>
+            Change Room</a
+          >
+          <h1 class="room-title text-center"></h1>
+
+          <ul class="messages list-group">
+            <!-- messages would be shown here -->
+          </ul>
+          <!-- <input type="range" id="range" min="12" max="36" step="2" value="2.0" /> -->
+          <form id="messageForm">
+            <div class="form-group">
+              <i class="" id="icon-type"></i>
+              <p class="help-block typing"></p>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="glyphicon glyphicon-comment"></i>
+                </span>
+                <input
+                  autofocus
+                  class="form-control"
+                  id="messagebox"
+                  name="message"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input class="btn btn-default btn-block" type="submit" />
+            </div>
+          </form>
+          <div id="settingsForm" style="display:none">
+            <p>Font Size:</p>
+            <input
+              type="range"
+              id="range"
+              min="12"
+              max="36"
+              step="2"
+              value="2.0"
+            />
+            <p>Dark Mode Toggle:</p>
+            <dark-mode-toggle
+              appearance="switch"
+              light="Day"
+              dark="Night"
+            ></dark-mode-toggle>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+    <script src="/js/QueryParams.js"></script>
+    <script src="/js/app.js"></script>
+    <canvas class="background"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+    <script>
+      window.onload = function () {
+        Particles.init({
+          selector: ".background",
+        });
+      };
+    </script>
+  </body>
+</html>

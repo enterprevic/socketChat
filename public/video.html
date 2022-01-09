@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Call</title>
+  </head>
+  <body>
+    <script>
+      var adjective = [
+        "Excited",
+        "Anxious",
+        "Overweight",
+        "Demonic",
+        "Jumpy",
+        "Misunderstood",
+        "Squashed",
+        "Gargantuan",
+        "Broad",
+        "Crooked",
+        "Curved",
+        "Deep",
+        "Even",
+        "Excited",
+        "Anxious",
+        "Overweight",
+        "Demonic",
+        "Jumpy",
+        "Misunderstood",
+        "Squashed",
+        "Gargantuan",
+        "Broad",
+        "Crooked",
+        "Curved",
+        "Deep",
+        "Even",
+        "Flat",
+        "Hilly",
+        "Jagged",
+        "Round",
+        "Shallow",
+        "Square",
+        "Steep",
+        "Straight",
+        "Thick",
+        "Thin",
+        "Cooing",
+        "Deafening",
+        "Faint",
+        "Harsh",
+        "High-pitched",
+        "Hissing",
+        "Hushed",
+        "Husky",
+        "Loud",
+        "Melodic",
+        "Moaning",
+        "Mute",
+        "Noisy",
+        "Purring",
+        "Quiet",
+        "Raspy",
+        "Screeching",
+        "Shrill",
+        "Silent",
+        "Soft",
+        "Squeaky",
+        "Squealing",
+        "Thundering",
+        "Voiceless",
+        "Whispering",
+      ];
+      var object = [
+        "Taco",
+        "Operating System",
+        "Sphere",
+        "Watermelon",
+        "Cheeseburger",
+        "Apple Pie",
+        "Spider",
+        "Dragon",
+        "Remote Control",
+        "Soda",
+        "Barbie Doll",
+        "Watch",
+        "Purple Pen",
+        "Dollar Bill",
+        "Stuffed Animal",
+        "Hair Clip",
+        "Sunglasses",
+        "T-shirt",
+        "Purse",
+        "Towel",
+        "Hat",
+        "Camera",
+        "Hand Sanitizer Bottle",
+        "Photo",
+        "Dog Bone",
+        "Hair Brush",
+        "Birthday Card",
+      ];
+      var list;
+
+      function generator() {
+        var name =
+          adjective[Math.floor(Math.random() * adjective.length)] +
+          " " +
+          object[Math.floor(Math.random() * object.length)];
+        return name;
+        console.log(name);
+      }
+
+      const characters =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      //
+      script.addEventListener("load", function (event) {
+        // Initialize the factory function
+        const meeting = new VideoSDKMeeting();
+
+        // Set apikey, meetingId and participant name
+        const apiKey = "bb6ec074-1cac-44eb-b598-77dc917d0c58"; // generated from app.videosdk.live
+        const meetingId = "milkyway";
+        const name = "John Doe";
+
+        const config = {
+          name: name,
+          apiKey: apiKey,
+          meetingId: meetingId,
+
+          containerId: null,
+          redirectOnLeave: "https://www.videosdk.live/",
+
+          micEnabled: true,
+          webcamEnabled: true,
+          participantCanToggleSelfWebcam: true,
+          participantCanToggleSelfMic: true,
+
+          chatEnabled: true,
+          screenShareEnabled: true,
+          pollEnabled: true,
+          whiteboardEnabled: true,
+          raiseHandEnabled: true,
+
+          recordingEnabled: true,
+          recordingWebhookUrl: "https://www.videosdk.live/callback",
+
+          brandingEnabled: true,
+          brandLogoURL: "https://picsum.photos/200",
+          brandName: "Awesome startup",
+          poweredBy: true,
+
+          participantCanLeave: true, // if false, leave button won't be visible
+
+          // Live stream meeting to youtube
+          livestream: {
+            autoStart: true,
+            outputs: [
+              // {
+              //   url: "rtmp://x.rtmp.youtube.com/live2",
+              //   streamKey: "<STREAM KEY FROM YOUTUBE>",
+              // },
+            ],
+          },
+
+          permissions: {
+            askToJoin: false, // Ask joined participants for entry in meeting
+            toggleParticipantMic: true, // Can toggle other participant's mic
+            toggleParticipantWebcam: true, // Can toggle other participant's webcam
+            removeParticipant: true, // Remove other participant from meeting
+            endMeeting: true, // End meeting for all participant
+            drawOnWhiteboard: true, // Can Draw on whiteboard
+            toggleWhiteboard: true, // Can toggle whiteboard
+            toggleRecording: true, // Can toggle recording
+          },
+
+          joinScreen: {
+            visible: true, // Show the join screen ?
+            title: `${generator()}`, // Meeting title
+            meetingUrl: window.location.href, // Meeting joining url
+          },
+
+          pin: {
+            allowed: true, // participant can pin any participant in meeting
+            layout: "SPOTLIGHT", // meeting layout - GRID | SPOTLIGHT | SIDEBAR
+          },
+        };
+
+        meeting.init(config);
+      });
+
+      script.src =
+        "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.21/rtc-js-prebuilt.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    </script>
+  </body>
+</html>
