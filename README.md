@@ -10,7 +10,14 @@ then ```node server.js``` to start up the server
 
 
 -added validation name and room
+
+
 -change and join another room
 -dynamic background 
+
+
 -settings toggle
 -video call
+
+
+-live preview
