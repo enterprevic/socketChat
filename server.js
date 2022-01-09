@@ -45,19 +45,6 @@ function sendCurrentUsers(socket) {
     timestamp: moment().valueOf(),
   });
 }
-
-//damilola2014
-const uri =
-  "mongodb+srv://victor:damilola2014@chatappdb.wfvk1.mongodb.net/chatAppDB?retryWrites=true&w=majority";
-mongo.connect(uri, function (err, db) {
-  if (err) {
-    throw err;
-  }
-  console.log("MongoDB connected...");
-
-  //db.createCollection('chats');
-  //let chat = db.getCollectionNames();
-  // io.on listens for events
   io.on("connection", function (socket) {
     console.log("User is connected");
 
@@ -141,7 +128,7 @@ mongo.connect(uri, function (err, db) {
       }
     });
   });
-});
+
 
 server.listen(PORT, function () {
   console.log("server started");
