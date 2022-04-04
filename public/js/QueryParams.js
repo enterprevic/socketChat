@@ -14,7 +14,7 @@ function switchRooms() {
 
     var search_params = url.searchParams;
     search_params.set("room", roomName);
-    url.search = search_params.toString();
+    url.search = search_params.toString(); // commit 3
     var new_url = url.toString();
     location.replace(new_url);
   }
