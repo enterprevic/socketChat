@@ -1,7 +1,7 @@
 const mongo = require("mongodb").MongoClient; // adds the mongodb client
 var moment = require("moment");
 
-var express = require('express');
+var express = require('express'); //requires express to run 
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
