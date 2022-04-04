@@ -38,10 +38,10 @@ range.addEventListener("input", function () {
 
 settings.addEventListener("click", hideSettings);
 
-function hideSettings() {
+/* function hideSettings() {
   if (document.getElementById("settingsForm").style.display == "none") {
     document.getElementById("settingsForm").style.display = "";
   } else {
     document.getElementById("settingsForm").style.display = "none";
   }
-}
+} */
