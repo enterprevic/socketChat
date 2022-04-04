@@ -1,4 +1,4 @@
-const mongo = require("mongodb").MongoClient;
+const mongo = require("mongodb").MongoClient; // adds the mongodb client
 var moment = require("moment");
 
 var express = require('express');
