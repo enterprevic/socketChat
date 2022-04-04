@@ -68,7 +68,7 @@ function sendCurrentUsers(socket) {
       socket.join(req.room);
       //broadcast new user joined room
       socket.broadcast.to(req.room).emit("message", {
-        name: "System",
+        name: "System Online with you",
         text: req.name + " has joined",
         timestamp: moment().valueOf(),
       });
