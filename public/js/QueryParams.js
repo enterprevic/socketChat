@@ -3,7 +3,7 @@ var form = document.getElementById("formDataPage");
 var settings = document.getElementById("settings");
 var changeRooms = document.getElementById("changeRooms");
 
-changeRooms.addEventListener("click", switchRooms);
+changeRooms.addEventListener("click", switchRooms); //new changes
 
 
 function switchRooms() {
