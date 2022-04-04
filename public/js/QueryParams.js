@@ -7,7 +7,7 @@ changeRooms.addEventListener("click", switchRooms); //new changes
 
 
 function switchRooms() {
-  let roomName = prompt("Please enter the room name", "Harry Potter");
+  let roomName = prompt("Please enter the room name", "Harry Potter"); // new
 
   if (roomName != null) {
     var url = new URL(window.location.href);
