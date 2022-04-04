@@ -1,7 +1,7 @@
 const mongo = require("mongodb").MongoClient;
-var moment = require("moment");
+var moment = require("moment"); //required
 
-var express = require('express');
+var express = require('express'); //required
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
