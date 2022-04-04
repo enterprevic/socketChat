@@ -38,7 +38,7 @@ function sendCurrentUsers(socket) {
 
   socket.emit("message", {
     name: "System",
-    text: "Current Users : " + users.join(", "),
+    text: "Current Online Users : " + users.join(", "),
     timestamp: moment().valueOf(),
   });
 }
