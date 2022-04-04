@@ -10,7 +10,8 @@ function switchRooms() {
   let roomName = prompt("Please enter the room name", "Harry Potter"); // new
 
   if (roomName != null) {
-    var url = new URL(window.location.href);
+    var url = new URL(window.location.href);//commit 2
+
     var search_params = url.searchParams;
     search_params.set("room", roomName);
     url.search = search_params.toString();
