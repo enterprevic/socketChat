@@ -4,7 +4,7 @@ var moment = require("moment");
 var express = require('express'); //requires express to run 
 var app = express();
 var server = require('http').createServer(app);
-var io = require('socket.io').listen(server);
+var io = require('socket.io').listen(server); //conflict
 
 
 var PORT = process.env.PORT || 3000; // take port from heroku or for loacalhost
